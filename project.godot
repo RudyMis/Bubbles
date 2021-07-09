@@ -8,10 +8,22 @@
 
 config_version=4
 
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
 [application]
 
 config/name="Bubbles"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=640
+window/size/height=480
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [physics]
 
