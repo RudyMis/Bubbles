@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/bubbles/Bubble.tscn" type="PackedScene" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+resource_local_to_scene = true
+radius = 15.6432
+
+[node name="Bubble" instance=ExtResource( 1 )]
+gravity_scale = -1.0
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource( 1 )
