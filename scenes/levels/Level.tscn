@@ -8,8 +8,15 @@
 
 [node name="CreateBubbles" type="Node" parent="."]
 script = ExtResource( 1 )
-ps_bubble = ExtResource( 4 )
 ps_bubble_scanner = ExtResource( 3 )
+ps_bubble = ExtResource( 4 )
 
 [node name="Bubble" parent="." instance=ExtResource( 4 )]
 position = Vector2( 119.443, 223.105 )
+mode = 1
+gravity_scale = 0.0
+
+[node name="Bubble2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 156.747, 192.151 )
+mode = 1
+gravity_scale = 0.0
