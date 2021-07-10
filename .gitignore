@@ -1,2 +1,4 @@
 .mono
 .import/
+test.*
+.gitignore

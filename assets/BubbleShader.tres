@@ -1,0 +1,75 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform sampler2D color_noise_texture : hint_albedo;
+uniform float color_time_speed : hint_range(0.1, 1);
+uniform vec4 color1 : hint_color;
+uniform float color_border : hint_range(0, 1);
+uniform vec4 color2 : hint_color;
+
+uniform sampler2D opacity_noise_texture : hint_albedo;
+uniform float opacity_time_speed : hint_range(0.1, 1);
+
+vec3 color_noise(vec2 uv, float time) {
+	vec2 pos = uv;
+	
+	vec4 noise = texture(color_noise_texture, pos);
+	float noise_value = noise.r;
+	
+	vec3 color = vec3(0.0);
+	if (noise_value < color_border) {
+		color = color1.rgb;
+	}
+	else {
+		color = color2.rgb;
+	}
+	
+	return color;
+}
+
+float opacity_noise(vec2 uv, float time) {
+	vec2 pos = uv + sin(time * color_time_speed) + cos(time * color_time_speed / 5.0) * vec2(-1.0, 1.0);
+	vec4 noise = texture(opacity_noise_texture, pos);
+	if (noise.r < 0.5) return 0.0;
+	return 0.5;
+}
+
+void fragment() {
+	vec4 tex = texture(TEXTURE, UV);
+	
+//	if (tex.rgb == vec3(0.0))
+	COLOR = vec4(color_noise(UV, TIME), opacity_noise(UV, TIME) * tex.a);
+	if (tex == vec4(1.0)) {
+		COLOR = tex;
+	}
+}"
+
+[sub_resource type="OpenSimplexNoise" id=2]
+period = 116.8
+persistence = 0.17
+lacunarity = 0.1
+
+[sub_resource type="NoiseTexture" id=3]
+seamless = true
+noise = SubResource( 2 )
+
+[sub_resource type="OpenSimplexNoise" id=4]
+seed = 15
+period = 167.6
+persistence = 0.558
+
+[sub_resource type="NoiseTexture" id=5]
+seamless = true
+noise = SubResource( 4 )
+
+[resource]
+shader = SubResource( 1 )
+shader_param/color_time_speed = 0.355
+shader_param/color1 = Color( 0.619608, 0.00392157, 1, 1 )
+shader_param/color_border = 0.424
+shader_param/color2 = Color( 0, 0.882353, 1, 1 )
+shader_param/opacity_time_speed = null
+shader_param/color_noise_texture = SubResource( 3 )
+shader_param/opacity_noise_texture = SubResource( 5 )
