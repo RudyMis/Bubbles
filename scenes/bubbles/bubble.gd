@@ -11,3 +11,8 @@ func rescale(s : Vector2):
 
 func _ready():
 	pass # Replace with function body.
+
+
+func _on_input_event(viewport, event : InputEvent, shape_idx):
+	if event.is_action_pressed("Click"):
+		queue_free()

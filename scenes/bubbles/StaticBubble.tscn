@@ -7,7 +7,12 @@ resource_local_to_scene = true
 radius = 15.6432
 
 [node name="Bubble" instance=ExtResource( 1 )]
+mode = 1
 physics_material_override = null
+gravity_scale = 0.0
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource( 1 )
+
+[node name="Sprite" parent="." index="1"]
+modulate = Color( 0.592157, 0.592157, 0.592157, 1 )

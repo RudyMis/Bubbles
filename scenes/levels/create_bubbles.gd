@@ -1,15 +1,16 @@
-extends Node
+extends Button
 
 export (PackedScene) var ps_bubble_scanner
 export (PackedScene) var ps_bubble
-export (float) var joint_max_length := 1.2
+export (float) var joint_softness := 1.2
+export (float) var hold_time := 2
 
 var tween = null
 var new_bubble_scanner = null
 
 var bubbles_to_connect := Array()
 
-func create_bubble_scanner():
+func _create_bubble_scanner():
 	new_bubble_scanner = ps_bubble_scanner.instance()
 	new_bubble_scanner.connect("body_entered", self, "_on_bubble_collision")
 	new_bubble_scanner.connect("body_exited", self, "_on_bubble_exited")
@@ -18,20 +19,21 @@ func create_bubble_scanner():
 	
 	tween = Tween.new()
 	add_child(tween)
-	tween.connect("tween_all_completed", self, "release_bubble")
+	tween.connect("tween_all_completed", self, "_release_bubble")
 	tween.interpolate_property(
 		new_bubble_scanner,
 		"scale",
 		Vector2(0.25, 0.25),
 		Vector2(1.5, 1.5),
-		5,
+		hold_time,
 		Tween.TRANS_SINE,
 		Tween.EASE_OUT
 	)
 	tween.start()
 
-func release_bubble():
-	yield(get_tree(), "idle_frame") # Czekamy na kolizje
+func _release_bubble():
+	
+	if new_bubble_scanner == null: return
 	
 	var new_bubble = ps_bubble.instance()
 	get_parent().add_child(new_bubble)
@@ -52,22 +54,12 @@ func connect_to_bubbles(bubble : Bubble):
 	# Dzięki temu się mniej odbijają od siebie nawzajem w grupie
 	if !bubbles_to_connect.empty(): bubble.physics_material_override = null
 	for another_bubble in bubbles_to_connect:
-		var spring = PinJoint2D.new()
-		another_bubble.add_child(spring)
-#		spring.length = bubble.position.distance_to(another_bubble.position) * joint_max_length
-#		spring.rest_length = bubble.position.distance_to(another_bubble.position)
-		spring.node_a = spring.get_path_to(bubble)
-		spring.node_b = spring.get_path_to(another_bubble)
+		var joint = PinJoint2D.new()
+		another_bubble.add_child(joint)
+		joint.softness = joint_softness
+		joint.node_a = joint.get_path_to(bubble)
+		joint.node_b = joint.get_path_to(another_bubble)
 	bubbles_to_connect.clear()
-
-func _input(event : InputEvent) -> void:
-	if event.is_action_pressed("Click"):
-		if tween == null:
-			create_bubble_scanner()
-
-	if event.is_action_released("Click"):
-		if tween != null:
-			release_bubble()
 
 func _ready():
 	pass # Replace with function body.
