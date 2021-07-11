@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/levels/base/scripts/level.gd" type="Script" id=1]
 [ext_resource path="res://scenes/levels/base/scripts/create_bubbles.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://scenes/levels/base/BubbleSpawner.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/levels/base/barrier.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/levels/base/Flow.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/levels/base/BubbleEater.tscn" type="PackedScene" id=11]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -71,12 +72,17 @@ position = Vector2( 152, 320 )
 [node name="flow" parent="." instance=ExtResource( 10 )]
 position = Vector2( 239.661, 166.076 )
 rotation = -12.6804
-gravity_vec = Vector2( 0.734879, 0.678199 )
+gravity_vec = Vector2( -0.993504, 0.113796 )
 gravity = 400.0
+speed = 20
 path_end = NodePath("../FlowEnd")
 
 [node name="FlowEnd" type="Position2D" parent="."]
 position = Vector2( 396.558, 148.105 )
+
+[node name="Succ" parent="." instance=ExtResource( 11 )]
+position = Vector2( 311.606, 79.2579 )
+rotation = -0.114044
 
 [connection signal="button_down" from="CreateBubbles" to="CreateBubbles" method="_create_bubble_scanner"]
 [connection signal="button_up" from="CreateBubbles" to="CreateBubbles" method="_on_button_released"]
