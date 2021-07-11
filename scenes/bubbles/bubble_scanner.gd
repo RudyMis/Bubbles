@@ -19,6 +19,7 @@ func stop_growing():
 
 func start_growing(grow_time : float, max_scale : Vector2):
 	if tween == null: return
+	$sfx_inflate.pitch_scale = 0.7 + randf()
 	$sfx_inflate.play()
 	tween.remove_all()
 	tween.interpolate_property(

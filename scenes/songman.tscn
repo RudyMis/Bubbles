@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://font/pressstart.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/songman.png" type="Texture" id=2]
+[ext_resource path="res://scenes/songman.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4.18733, 5.8425 )
+
+[node name="songman" type="Sprite"]
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="song" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+margin_left = -13.0
+margin_top = -14.0
+margin_right = 13.0
+margin_bottom = 2.0
+custom_fonts/font = ExtResource( 1 )
+text = "Hi"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="playpause" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playpause"]
+position = Vector2( -0.110474, 9.8688 )
+shape = SubResource( 1 )
+
+[node name="next" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="next"]
+position = Vector2( 8.87455, 9.83197 )
+shape = SubResource( 1 )
+[connection signal="finished" from="song" to="." method="_on_song_finished"]
+[connection signal="input_event" from="playpause" to="." method="_on_playpause_input_event"]
+[connection signal="input_event" from="next" to="." method="_on_next_input_event"]
