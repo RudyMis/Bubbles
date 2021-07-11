@@ -1,0 +1,292 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://font/pressstart.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/levels/Intro.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "funnyletters"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("funnytitle:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[node name="Intro" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ATU" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ACR" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="screen1" type="ColorRect" parent="ACR"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.275391
+margin_right = 0.275391
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ACR"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -107.0
+margin_top = 68.0
+margin_right = 111.0
+margin_bottom = 216.0
+custom_fonts/normal_font = ExtResource( 1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "   - - -  CREDITS  - - -
+  
+    Members of [color=#00ddff]E[/color][color=#ffdd00]c[/color][color=#cccccc]static[/color]:
+	
+[color=#ff8020]REDDBEAR[/color]           [color=#0055ff]KRYSTIAN[/color]
+
+Head       [color=#aaaaaa]Ideas[/color]    Support
+Head     [color=#aaaaaa]Scripting[/color]  Support
+Head   [color=#aaaaaa]Level Design[/color]  
+Head      [color=#aaaaaa]Visuals[/color]      Head
+          [color=#aaaaaa]  SFX[/color]        Head
+		  [color=#aaaaaa] Music[/color]       Head
+	[color=#aaaaaa]1. tearoo.ogg[/color]         |
+	[color=#aaaaaa]2. atrocitizen.ogg[/color]  own
+	[color=#aaaaaa]3. patataika.ogg[/color]   work
+	[color=#aaaaaa]4. malaxer.ogg[/color]        |"
+text = "   - - -  CREDITS  - - -
+  
+    Members of Ecstatic:
+	
+REDDBEAR           KRYSTIAN
+
+Head       Ideas    Support
+Head     Scripting  Support
+Head   Level Design  
+Head      Visuals      Head
+            SFX        Head
+		   Music       Head
+	1. tearoo.ogg         |
+	2. atrocitizen.ogg  own
+	3. patataika.ogg   work
+	4. malaxer.ogg        |"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tu_button" type="Button" parent="ACR"]
+margin_left = 248.421
+margin_top = 250.624
+margin_right = 388.421
+margin_bottom = 270.624
+rect_pivot_offset = Vector2( 112.447, 20.3241 )
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.164706, 0.823529, 1, 1 )
+custom_colors/font_color_pressed = Color( 0, 0.415686, 1, 1 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "[ See TUTORIAL ]"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pl_button" type="Button" parent="ACR"]
+margin_left = 248.421
+margin_top = 263.844
+margin_right = 388.421
+margin_bottom = 283.844
+rect_pivot_offset = Vector2( 112.447, 20.3241 )
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.164706, 0.823529, 1, 1 )
+custom_colors/font_color_pressed = Color( 0, 0.415686, 1, 1 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "[  Lemme PLAY  ]"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="A1" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="screen1" type="ColorRect" parent="A1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.275391
+margin_right = 0.275391
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="A1"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -87.5746
+margin_top = 67.9312
+margin_right = 118.425
+margin_bottom = 232.931
+custom_fonts/normal_font = ExtResource( 1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "   Welcome to our game:
+
+[color=#00bbff]B O B B L E[/color][color=#00ddff]       0[/color]
+[color=#00bbff]C O N S T R U C C I O N E[/color]
+
+   The game was made by 
+   [color=#00ddff]E[/color][color=#ffdd00]c[/color][color=#cccccc]static[/color], in 48h for  
+   \"Bubbles\" Mini Jam.
+
+   Menu is common and
+   uninteresting, but 
+   rest assured that the
+   gameplay is [color=#ee8800]anything
+   but boring.[/color] :]]
+
+   We sincerely hope no
+   computers will be
+   broken today."
+text = "   Welcome to our game:
+
+B O B B L E       0
+C O N S T R U C C I O N E
+
+   The game was made by 
+   Ecstatic, in 48h for  
+   \"Bubbles\" Mini Jam.
+
+   Menu is common and
+   uninteresting, but 
+   rest assured that the
+   gameplay is anything
+   but boring. :]]
+
+   We sincerely hope no
+   computers will be
+   broken today."
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="funnytitle" type="RichTextLabel" parent="A1"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -88.2271
+margin_top = 85.3901
+margin_right = 117.773
+margin_bottom = 104.39
+custom_fonts/normal_font = ExtResource( 1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "[color=#8000ddff]B O B B L E[/color][color=#80ffffff]       0[/color]
+[color=#8000ddff]C O N S T R U C C I O N E[/color]
+"
+visible_characters = 0
+percent_visible = 0.0
+text = "B O B B L E       0
+C O N S T R U C C I O N E
+"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cr_button" type="Button" parent="A1"]
+margin_left = 248.145
+margin_top = 237.955
+margin_right = 388.145
+margin_bottom = 257.955
+rect_pivot_offset = Vector2( 112.447, 20.3241 )
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.164706, 0.823529, 1, 1 )
+custom_colors/font_color_pressed = Color( 0, 0.415686, 1, 1 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "[ See  CREDITS ]"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tu_button" type="Button" parent="A1"]
+margin_left = 248.421
+margin_top = 250.624
+margin_right = 388.421
+margin_bottom = 270.624
+rect_pivot_offset = Vector2( 112.447, 20.3241 )
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.164706, 0.823529, 1, 1 )
+custom_colors/font_color_pressed = Color( 0, 0.415686, 1, 1 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "[ See TUTORIAL ]"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pl_button" type="Button" parent="A1"]
+margin_left = 248.421
+margin_top = 263.844
+margin_right = 388.421
+margin_bottom = 283.844
+rect_pivot_offset = Vector2( 112.447, 20.3241 )
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.164706, 0.823529, 1, 1 )
+custom_colors/font_color_pressed = Color( 0, 0.415686, 1, 1 )
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+text = "[  Lemme PLAY  ]"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="A1"]
+anims/funnyletters = SubResource( 1 )
+[connection signal="pressed" from="ACR/pl_button" to="." method="_on_ACRpl_button_pressed"]
+[connection signal="pressed" from="A1/cr_button" to="." method="_on_cr_button_pressed"]
+[connection signal="pressed" from="A1/pl_button" to="." method="_on_A1pl_button_pressed"]
