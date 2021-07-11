@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/dispenser/buttons/o2button5.png" type="Texture" id=4]
 [ext_resource path="res://assets/screen.png" type="Texture" id=5]
 [ext_resource path="res://font/pressstart.tres" type="DynamicFont" id=6]
-[ext_resource path="res://assets/dispenser/buttons/o2button3.png" type="Texture" id=7]
+[ext_resource path="res://assets/dispenser/buttons/o2button1.png" type="Texture" id=7]
 [ext_resource path="res://assets/dispenser/buttons/o2button2.png" type="Texture" id=8]
 [ext_resource path="res://assets/dispenser/buttons/o2button4.png" type="Texture" id=9]
 [ext_resource path="res://assets/sound/click.wav" type="AudioStream" id=10]
@@ -93,8 +93,8 @@ grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 10, 10 )
 toggle_mode = true
-texture_normal = ExtResource( 9 )
-texture_pressed = ExtResource( 8 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 7 )
 texture_disabled = ExtResource( 4 )
 stretch_mode = 5
