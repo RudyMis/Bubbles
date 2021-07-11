@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/levels/base/level.gd" type="Script" id=1]
 [ext_resource path="res://scenes/levels/base/create_bubbles.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scenes/Gui.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/levels/base/BubbleSpawner.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/levels/base/barrier.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/flow.tscn" type="PackedScene" id=10]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -47,10 +48,14 @@ ps_bubble = ExtResource( 3 )
 
 [node name="Bubble" parent="." instance=ExtResource( 6 )]
 position = Vector2( 160.509, 180.638 )
+collision_layer = 1
+collision_mask = 1
 ps_particles = null
 
 [node name="Bubble2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 111.244, 229.374 )
+collision_layer = 1
+collision_mask = 1
 ps_particles = null
 
 [node name="Gui" parent="." instance=ExtResource( 7 )]
@@ -62,6 +67,10 @@ width = 96
 
 [node name="BubbleSpawner" parent="." instance=ExtResource( 8 )]
 position = Vector2( 152, 320 )
+
+[node name="flow" parent="." instance=ExtResource( 10 )]
+position = Vector2( 254.797, 183.525 )
+rotation = -1.90415
 [connection signal="button_down" from="CreateBubbles" to="CreateBubbles" method="_create_bubble_scanner"]
 [connection signal="button_up" from="CreateBubbles" to="CreateBubbles" method="_on_button_released"]
 [connection signal="no_bubbles" from="BubbleSpawner" to="." method="_on_no_bubbles"]
