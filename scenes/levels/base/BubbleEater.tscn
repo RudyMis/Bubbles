@@ -30,7 +30,6 @@ position = Vector2( 0, 40 )
 rotation = -1.5708
 gravity_vec = Vector2( -4.37114e-08, 1 )
 gravity = 400.0
-speed = 40.0
 path_end = NodePath("../End")
 
 [node name="End" type="Position2D" parent="."]
@@ -76,4 +75,5 @@ __meta__ = {
 [node name="yummy" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 7 )
 volume_db = 7.0
+
 [connection signal="body_entered" from="EndTrigger" to="." method="_on_body_entered"]

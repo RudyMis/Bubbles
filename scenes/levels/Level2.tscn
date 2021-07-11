@@ -50,7 +50,6 @@ position = Vector2( 508.249, 146.489 )
 rotation = 1.52541
 gravity_vec = Vector2( -0.0453698, -0.99897 )
 gravity = 400.0
-speed = 40
 path_end = NodePath("../Position2D")
 
 [node name="Position2D" type="Position2D" parent="Decor" index="3"]
