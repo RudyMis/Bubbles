@@ -11,6 +11,9 @@ func _ready():
 	current = randi() % 4
 	doubleplay = false
 	playing = true
+	current = randi() % 4
+	$song.stream = songfiles[current]
+	$song.volume_db = 1
 	_on_song_finished()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,21 +27,23 @@ func _on_song_finished():
 			current = randi() % 4
 		$song.stream = songfiles[current]
 	$song.play()
-	$Label.text = current + 1
+	$Label.text = String(current + 1)
 	doubleplay = !doubleplay
 
 
 func _on_playpause_input_event(viewport, event, shape_idx):
+	print("0pp")
 	if event is InputEventMouseButton and event.pressed:
 		if playing:
 			$Label.text = "||"
 			$song.pause()
 		else:
-			$Label.text = current + 1
+			$Label.text = String(current + 1)
 			$song.play()
 		playing = !playing
 
 
 func _on_next_input_event(viewport, event, shape_idx):
+	print("521")
 	if event is InputEventMouseButton and event.pressed:
 		_on_song_finished()

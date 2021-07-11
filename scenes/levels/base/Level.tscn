@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/levels/base/scripts/level.gd" type="Script" id=1]
 [ext_resource path="res://scenes/levels/base/scripts/create_bubbles.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://autoload/SceneChanger.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/Gui.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/levels/base/BubbleSpawner.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/songman.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/levels/base/BubbleEater.tscn" type="PackedScene" id=11]
 
 [sub_resource type="StyleBoxEmpty" id=1]
@@ -58,6 +59,8 @@ rotation = -0.114044
 
 [node name="ColorRect" parent="." instance=ExtResource( 6 )]
 
+[node name="songman" parent="." instance=ExtResource( 9 )]
+position = Vector2( 600, 340 )
 [connection signal="button_down" from="CreateBubbles" to="CreateBubbles" method="_create_bubble_scanner"]
 [connection signal="button_up" from="CreateBubbles" to="CreateBubbles" method="_on_button_released"]
 [connection signal="no_bubbles" from="BubbleSpawner" to="." method="_on_no_bubbles"]
