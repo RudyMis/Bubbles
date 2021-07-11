@@ -33,6 +33,8 @@ func _create_bubble_scanner():
 	bubble_scanner = ps_bubble_scanner.instance()
 	get_parent().add_child(bubble_scanner)
 	
+	get_tree().call_group("BubbleSpawner", "remove_bubble")
+	
 	bubble_scanner.connect("body_entered", self, "_on_bubble_collision")
 	bubble_scanner.connect("body_exited", self, "_on_bubble_exited")
 	bubble_scanner.connect("bubble_ready", self, "_release_bubble")
@@ -42,7 +44,6 @@ func _create_bubble_scanner():
 
 func _release_bubble(bubble):
 	if bubble == null: return
-	get_tree().call_group("BubbleSpawner", "remove_bubble")
 	
 	bubble_scanner = null
 	
