@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/levels/base/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://font/pressstart.tres" type="DynamicFont" id=2]
 
 [node name="Level" instance=ExtResource( 1 )]
 
@@ -14,3 +15,61 @@ position = Vector2( 153.259, 313.948 )
 position = Vector2( 550.266, 71.9469 )
 rotation = 0.391082
 required_amount_of_bubbles = 5
+
+[node name="Gui" parent="." index="4"]
+margin_top = -0.667419
+margin_bottom = -0.667419
+
+[node name="InfoStart" type="Label" parent="." index="5"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 18.0793
+margin_top = -56.0448
+margin_right = 250.079
+margin_bottom = -37.0448
+custom_fonts/font = ExtResource( 2 )
+text = "Press to create
+happy bubbles"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfoCreate" type="Label" parent="." index="6"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 380.137
+margin_top = -110.96
+margin_right = 612.137
+margin_bottom = -91.96
+custom_fonts/font = ExtResource( 2 )
+text = "Left click to create bubble"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfoCreate2" type="Label" parent="." index="7"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 259.553
+margin_top = -15.6861
+margin_right = 491.553
+margin_bottom = 3.3139
+custom_fonts/font = ExtResource( 2 )
+text = "Create or pop bubbles"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfoEnd" type="Label" parent="." index="8"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 369.717
+margin_top = -306.692
+margin_right = 601.717
+margin_bottom = -287.692
+custom_fonts/font = ExtResource( 2 )
+text = "Only Happy Bubbles
+count towards goal"
+__meta__ = {
+"_edit_use_anchors_": false
+}
