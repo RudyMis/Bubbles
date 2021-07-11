@@ -62,6 +62,7 @@ width = 96
 
 [node name="BubbleSpawner" parent="." instance=ExtResource( 8 )]
 position = Vector2( 152, 320 )
+
 [connection signal="button_down" from="CreateBubbles" to="CreateBubbles" method="_create_bubble_scanner"]
 [connection signal="button_up" from="CreateBubbles" to="CreateBubbles" method="_on_button_released"]
 [connection signal="no_bubbles" from="BubbleSpawner" to="." method="_on_no_bubbles"]

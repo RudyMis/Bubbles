@@ -1,11 +1,14 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/dispenser.png" type="Texture" id=1]
 [ext_resource path="res://scenes/levels/base/bubble_spawner.gd" type="Script" id=2]
 [ext_resource path="res://scenes/bubbles/BubbleScanner.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/o2button.png" type="Texture" id=4]
+[ext_resource path="res://assets/dispenser/buttons/o2button5.png" type="Texture" id=4]
 [ext_resource path="res://assets/screen.png" type="Texture" id=5]
 [ext_resource path="res://font/pressstart.tres" type="DynamicFont" id=6]
+[ext_resource path="res://assets/dispenser/buttons/o2button3.png" type="Texture" id=7]
+[ext_resource path="res://assets/dispenser/buttons/o2button2.png" type="Texture" id=8]
+[ext_resource path="res://assets/dispenser/buttons/o2button4.png" type="Texture" id=9]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -27,7 +30,7 @@ region = Rect2( 72, 0, 24, 32 )
 atlas = ExtResource( 1 )
 region = Rect2( 96, 0, 24, 32 )
 
-[sub_resource type="SpriteFrames" id=12]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
@@ -35,111 +38,65 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 4 )
-region = Rect2( 60, 0, 12, 8 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 4 )
-region = Rect2( 48, 0, 12, 8 )
-
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 12, 8 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 4 )
-region = Rect2( 12, 0, 12, 8 )
-
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 4 )
-region = Rect2( 24, 0, 12, 8 )
-
-[sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 4 )
-region = Rect2( 36, 0, 12, 8 )
-
-[sub_resource type="SpriteFrames" id=18]
-animations = [ {
-"frames": [ SubResource( 13 ), SubResource( 11 ) ],
-"loop": true,
-"name": "nobub",
-"speed": 2.0
-}, {
-"frames": [ SubResource( 14 ), SubResource( 15 ) ],
-"loop": true,
-"name": "ok",
-"speed": 2.0
-}, {
-"frames": [ SubResource( 16 ), SubResource( 17 ) ],
-"loop": true,
-"name": "blow",
-"speed": 4.0
-} ]
-
 [node name="BubbleSpawner" type="AnimatedSprite" groups=[
 "BubbleSpawner",
 ]]
-frames = SubResource( 12 )
+frames = SubResource( 6 )
 animation = "plumm"
 speed_scale = 0.5
 script = ExtResource( 2 )
 ps_bubble_scanner = ExtResource( 3 )
-path_label = NodePath("GuiIGuess/VBoxContainer/LiczbaBaniek")
+path_label = NodePath("Tabliczka/CenterContainer/LiczbaBaniek")
 path_spawn = NodePath("SpawnPoint")
 path_timer = NodePath("Timer")
-path_anim = NodePath("AnimationPlayer")
+path_button = NodePath("Guzik")
 
-[node name="tylko_wyglad" type="AnimatedSprite" parent="."]
-position = Vector2( 0, 6 )
-frames = SubResource( 18 )
-animation = "ok"
-
-[node name="o2button" type="AnimatedSprite" parent="."]
-position = Vector2( 0, 7 )
-frames = SubResource( 18 )
-animation = "ok"
-
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Tabliczka" type="Sprite" parent="."]
 position = Vector2( 0, 20 )
 texture = ExtResource( 5 )
 
-[node name="GuiIGuess" type="CenterContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -24.0
-margin_top = -16.0
-margin_bottom = 11.0
+[node name="CenterContainer" type="CenterContainer" parent="Tabliczka"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -10.0
+margin_top = -8.0
+margin_right = -10.0
+margin_bottom = -8.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GuiIGuess"]
-margin_left = 7.0
-margin_top = 2.0
-margin_right = 17.0
-margin_bottom = 24.0
-
-[node name="Guzik" type="TextureButton" parent="GuiIGuess/VBoxContainer"]
-margin_right = 10.0
-margin_bottom = 10.0
-rect_min_size = Vector2( 10, 10 )
-toggle_mode = true
-stretch_mode = 5
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="LiczbaBaniek" type="Label" parent="GuiIGuess/VBoxContainer"]
-margin_top = 14.0
-margin_right = 10.0
-margin_bottom = 22.0
+[node name="LiczbaBaniek" type="Label" parent="Tabliczka/CenterContainer"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 14.0
+margin_bottom = 12.0
 custom_fonts/font = ExtResource( 6 )
 text = "8"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Guzik" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -17.0
+margin_top = -15.0
+margin_right = -7.0
+margin_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 10, 10 )
+toggle_mode = true
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 7 )
+texture_disabled = ExtResource( 4 )
+stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -150,8 +107,8 @@ position = Vector2( 0, -16 )
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 
-[node name="Tween" type="Tween" parent="."]
-[connection signal="button_down" from="GuiIGuess/VBoxContainer/Guzik" to="." method="_on_Guzik_button_down"]
-[connection signal="button_up" from="GuiIGuess/VBoxContainer/Guzik" to="." method="_on_Guzik_button_up"]
-[connection signal="toggled" from="GuiIGuess/VBoxContainer/Guzik" to="." method="_on_button_toggled"]
+[connection signal="no_bubbles" from="." to="." method="_on_no_bubbles"]
+[connection signal="button_down" from="Guzik" to="." method="_on_Guzik_button_down"]
+[connection signal="button_up" from="Guzik" to="." method="_on_Guzik_button_up"]
+[connection signal="toggled" from="Guzik" to="." method="_on_button_toggled"]
 [connection signal="timeout" from="Timer" to="." method="_spawn_bubble"]
