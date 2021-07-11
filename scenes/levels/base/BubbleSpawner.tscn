@@ -108,7 +108,5 @@ position = Vector2( 0, -16 )
 wait_time = 2.0
 
 [connection signal="no_bubbles" from="." to="." method="_on_no_bubbles"]
-[connection signal="button_down" from="Guzik" to="." method="_on_Guzik_button_down"]
-[connection signal="button_up" from="Guzik" to="." method="_on_Guzik_button_up"]
 [connection signal="toggled" from="Guzik" to="." method="_on_button_toggled"]
 [connection signal="timeout" from="Timer" to="." method="_spawn_bubble"]
