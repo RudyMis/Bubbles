@@ -8,7 +8,7 @@ export (Vector2) var bubble_scale := Vector2(1, 1)
 export (NodePath) var path_label
 export (NodePath) var path_spawn
 export (NodePath) var path_timer
-export (Node) var path_anim
+export (NodePath) var path_anim
 
 onready var label = get_node(path_label)
 onready var spawn = get_node(path_spawn)

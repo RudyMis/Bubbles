@@ -44,12 +44,6 @@ tracks/0/keys = {
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 ps_bubble_scanner = ExtResource( 3 )
-initial_number_of_bubbles = null
-bubble_scale = null
-path_label = null
-path_spawn = null
-path_timer = null
-path_anim = null
 
 [node name="GuiIGuess" type="CenterContainer" parent="."]
 anchor_right = 1.0
