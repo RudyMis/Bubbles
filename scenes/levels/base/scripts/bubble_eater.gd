@@ -16,7 +16,7 @@ func update_number():
 		emit_signal("enough_bubbles")
 
 func _ready():
-	pass
+	label.text = String(remaining)
 
 func _on_body_entered(body : Node2D):
 	if body.is_in_group("HappyBubble"):

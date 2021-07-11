@@ -7,8 +7,8 @@
 [ext_resource path="res://assets/sound/pop2.ogg" type="AudioStream" id=5]
 
 [sub_resource type="PhysicsMaterial" id=1]
-friction = 0.5
-bounce = 0.7
+friction = 0.1
+bounce = 0.8
 
 [sub_resource type="CircleShape2D" id=2]
 resource_local_to_scene = true
@@ -19,7 +19,8 @@ input_pickable = true
 collision_layer = 17
 collision_mask = 17
 physics_material_override = SubResource( 1 )
-gravity_scale = -1.0
+gravity_scale = -1.5
+linear_damp = -0.5
 applied_torque = 5.0
 script = ExtResource( 1 )
 ps_particles = ExtResource( 4 )
