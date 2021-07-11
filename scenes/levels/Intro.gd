@@ -13,10 +13,17 @@ func _STARTDAGAME():
 
 func _on_cr_button_pressed():
 	$A1.visible = false
-	$ACR.visible = true
-
 
 func _on_A1pl_button_pressed():
 	_STARTDAGAME()
 func _on_ACRpl_button_pressed():
 	_STARTDAGAME()
+func _on_ATUpl_button_pressed():
+	_STARTDAGAME()
+
+func _on_ACRtu_button_pressed():
+	$A1.visible = false
+	$ACR.visible = false
+func _on_A1tu_button_pressed():
+	$A1.visible = false
+	$ACR.visible = false
