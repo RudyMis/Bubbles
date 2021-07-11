@@ -21,6 +21,8 @@ func _ready():
 func _on_body_entered(body : Node2D):
 	if body.is_in_group("HappyBubble"):
 		update_number()
+		$yummy.pitch_scale = 0.7 + randf()
+		$yummy.play()
 	if body.is_class("Bubble"):
 		body.kill()
 	else:

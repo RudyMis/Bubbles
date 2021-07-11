@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/malaxer.ogg-22feb2e7604940e4a2d37eb85aef835a.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/music/malaxer.ogg"
+dest_files=[ "res://.import/malaxer.ogg-22feb2e7604940e4a2d37eb85aef835a.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
