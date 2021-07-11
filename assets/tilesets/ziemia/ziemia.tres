@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=45 format=2]
 
-[ext_resource path="res://assets/Ziemia.png" type="Texture" id=1]
+[ext_resource path="res://assets/tilesets/ziemia/Ziemia.png" type="Texture" id=1]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 0, 16, 0, 16, 16, 0, 16 )
