@@ -34,12 +34,11 @@ func _on_playpause_toggle(button_pressed):
 	print("0pp")
 	if button_pressed:
 		$Label.text = "||"
-		$song.pause()
 	else:
 		$Label.text = String(current + 1)
-		$song.play()
+	$song.stream_paused = !($song.stream_paused)
 	playing = !button_pressed
 
-
 func _on_next_pressed():
+	doubleplay = true
 	_on_song_finished()

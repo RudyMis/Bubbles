@@ -90,7 +90,6 @@ flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="finished" from="song" to="." method="_on_song_finished"]
 [connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
 [connection signal="toggled" from="PlayPause" to="." method="_on_playpause_toggle"]
