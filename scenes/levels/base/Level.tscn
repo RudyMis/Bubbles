@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/levels/base/level.gd" type="Script" id=1]
 [ext_resource path="res://scenes/levels/base/create_bubbles.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://scenes/bubbles/StaticBubble.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/Gui.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/levels/base/BubbleSpawner.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/levels/base/barrier.tscn" type="PackedScene" id=9]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -55,9 +56,12 @@ ps_particles = null
 [node name="Gui" parent="." instance=ExtResource( 7 )]
 path_create_button = NodePath("../CreateBubbles")
 
+[node name="barrier" parent="." instance=ExtResource( 9 )]
+position = Vector2( 152, 322 )
+width = 96
+
 [node name="BubbleSpawner" parent="." instance=ExtResource( 8 )]
-visible = false
-position = Vector2( 152.695, 320.334 )
+position = Vector2( 152, 320 )
 [connection signal="button_down" from="CreateBubbles" to="CreateBubbles" method="_create_bubble_scanner"]
 [connection signal="button_up" from="CreateBubbles" to="CreateBubbles" method="_on_button_released"]
 [connection signal="no_bubbles" from="BubbleSpawner" to="." method="_on_no_bubbles"]
