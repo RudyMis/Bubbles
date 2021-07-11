@@ -1,11 +1,12 @@
 extends MarginContainer
 
-export (NodePath) var create_button
+export (NodePath) var path_create_button
+
+onready var create_button = get_node(path_create_button)
 
 func _ready():
-	create_button = get_node(create_button)
-
+	pass
 
 func _on_toggle(button_pressed):
-	create_button.disabled = button_pressed
-	create_button.mouse_filter = 2 if button_pressed else 0
+	if create_button == null: return
+	create_button.disable(button_pressed)
