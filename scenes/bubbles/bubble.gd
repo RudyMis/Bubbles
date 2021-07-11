@@ -7,8 +7,6 @@ func is_class(name): return name == "Bubble" || .is_class(name)
 export (PackedScene) var ps_particles
 
 func rescale(s : Vector2):
-	$sfx_inflate.play()
-	print("push")
 	for child in get_children():
 		if "scale" in child:
 			child.scale = s
@@ -17,8 +15,15 @@ func kill():
 	var particles = ps_particles.instance()
 	particles.position = position
 	get_parent().add_child(particles)
-	print("pop")
 	$sfx_pop.play()
+	$Sprite.visible = false
+	var t = Timer.new() # żeby odtworzyć dźwięk pękania.
+	t.set_wait_time(1)
+	t.set_one_shot(true)
+	self.add_child(t)
+	t.start()
+	yield(t, "timeout")
+	t.queue_free()
 	queue_free()
 
 func _ready():

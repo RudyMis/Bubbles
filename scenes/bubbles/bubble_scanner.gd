@@ -14,11 +14,12 @@ func stop_growing():
 	bubble.rescale(scale)
 	get_parent().add_child(bubble)
 	emit_signal("bubble_ready", bubble)
+	$sfx_inflate.stop()
 	call_deferred("queue_free")
 
 func start_growing(grow_time : float, max_scale : Vector2):
 	if tween == null: return
-	
+	$sfx_inflate.play()
 	tween.remove_all()
 	tween.interpolate_property(
 		self,
