@@ -1,11 +1,10 @@
 extends ColorRect
 
-export (float) var fade_time := 0.5
+export (float) var fade_time := 1.0
 export (String) var radius_param_name := "radius"
 onready var tween = $Tween
 
 func call_set_shader(value : float):
-	print("Dzień dobry")
 	material.set_shader_param(radius_param_name, value)
 
 func end_level():
