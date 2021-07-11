@@ -16,12 +16,16 @@ func remove_bubble():
 	label.text = String(number_of_bubbles)
 	if number_of_bubbles <= 0:
 		emit_signal("no_bubbles")
+		$o2button.play("nobub")
+		stop()
+		frame = 0
 
 func _ready():
 	spawn = get_node(spawn)
 	label = get_node(label)
 	timer = get_node(timer)
 	label.text = String(number_of_bubbles)
+	$o2button.play("ok")
 
 func _spawn_bubble():
 	if number_of_bubbles <= 0: return
@@ -34,13 +38,31 @@ func _spawn_bubble():
 	bubble_scanner.start_growing(timer.wait_time / 2.0, bubble_scale)
 	yield(get_tree(), "idle_frame")
 	bubble_scanner.set_visible(true)
-	play("plumm")
+	if number_of_bubbles > 0 : play("plumm")
 	remove_bubble()
 
 func _on_button_toggled(button_toggle : bool):
 	timer.start() if button_toggle else timer.stop()
 	if button_toggle:
+		if label.text == "0":		# Okropne
+			$o2button.play("nobub")
+		else:
+			$o2button.play("blow")
 		play("plumm")
 	else:
 		stop()
+		if label.text == "0":		# Okropne
+			$o2button.play("nobub")
+		else:
+			$o2button.play("ok")
 		frame = 0
+
+# o2button - kosmetyka
+
+
+
+func _on_Guzik_button_down():
+	$o2button.position = Vector2(0, 6)
+
+func _on_Guzik_button_up():
+	$o2button.position = Vector2(0, 7)
