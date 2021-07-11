@@ -20,11 +20,11 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Bubbles"
+config/name="Bobble Construccione"
 run/main_scene="res://scenes/levels/Intro.tscn"
 run/disable_stdout=true
 run/disable_stderr=true
-config/icon="res://icon.png"
+config/icon="res://assets/icon.png"
 
 [autoload]
 
