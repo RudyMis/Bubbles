@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Bubbles"
-run/main_scene="res://scenes/levels/Level.tscn"
+run/main_scene="res://scenes/levels/base/Level.tscn"
 config/icon="res://icon.png"
 
 [display]
