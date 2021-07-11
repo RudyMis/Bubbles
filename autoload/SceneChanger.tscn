@@ -1,41 +1,78 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://autoload/SceneChanger.gd" type="Script" id=1]
+[ext_resource path="res://assets/gui/Back/ButtonBack2.png" type="Texture" id=2]
+[ext_resource path="res://assets/gui/Back/ButtonBack1.png" type="Texture" id=3]
+[ext_resource path="res://assets/gui/Back/ButtonBack3.png" type="Texture" id=4]
+[ext_resource path="res://assets/gui/Next/ButtonNext1.png" type="Texture" id=5]
+[ext_resource path="res://assets/gui/Next/ButtonNext2.png" type="Texture" id=6]
+[ext_resource path="res://assets/gui/Next/ButtonNext3.png" type="Texture" id=7]
+[ext_resource path="res://font/pressstart.tres" type="DynamicFont" id=8]
+[ext_resource path="res://assets/shaders/SceneChangerShader.tres" type="Material" id=9]
 
-[sub_resource type="Shader" id=1]
-code = "shader_type canvas_item;
+[node name="SceneChanger" type="CanvasLayer"]
+layer = 128
+script = ExtResource( 1 )
 
-uniform float radius : hint_range(0, 1);
-uniform vec4 color : hint_color;
-
-void fragment() {
-	vec2 uv = (UV - vec2(0.5)) * vec2(16.0, 9.0) / 10.0;
-	if (length(uv) > radius) {
-		COLOR = color;
-	}
-	else {
-		COLOR = vec4(0.0);
-	}
-}"
-
-[sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
-shader_param/radius = 1.0
-shader_param/color = Color( 1, 0, 0.447059, 1 )
-
-[node name="SceneChanger" type="ColorRect"]
-material = SubResource( 2 )
+[node name="ColorRect" type="ColorRect" parent="."]
+material = ExtResource( 9 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-mouse_filter = 2
-color = Color( 0, 0, 0, 1 )
-script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Gui" type="MarginContainer" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_bottom = 100
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Gui"]
+margin_right = 640.0
+margin_bottom = 260.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 8 )
+text = "GOOD JOB!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="HBoxContainer" parent="Gui"]
+margin_left = 247.0
+margin_top = 228.0
+margin_right = 393.0
+margin_bottom = 260.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+custom_constants/separation = 50
+
+[node name="Back" type="TextureButton" parent="Gui/Buttons"]
+margin_right = 48.0
+margin_bottom = 32.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 2 )
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Next" type="TextureButton" parent="Gui/Buttons"]
+margin_left = 98.0
+margin_right = 146.0
+margin_bottom = 32.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 6 )
+stretch_mode = 5
+
 [node name="Tween" type="Tween" parent="."]
 
-[node name="TextureButton" type="TextureButton" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[connection signal="pressed" from="Gui/Buttons/Back" to="." method="back"]
+[connection signal="pressed" from="Gui/Buttons/Next" to="." method="next_level"]
