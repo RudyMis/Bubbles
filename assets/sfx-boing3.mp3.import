@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sfx-boing3.mp3-a7265af4028ca81c7fcf5590b04de2af.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx-boing3.mp3"
+dest_files=[ "res://.import/sfx-boing3.mp3-a7265af4028ca81c7fcf5590b04de2af.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
