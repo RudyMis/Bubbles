@@ -7,6 +7,7 @@ func is_class(name): return name == "Bubble" || .is_class(name)
 export (PackedScene) var ps_particles
 
 func rescale(s : Vector2):
+	$sfx_inflate.play()
 	for child in get_children():
 		if "scale" in child:
 			child.scale = s
@@ -15,6 +16,7 @@ func kill():
 	var particles = ps_particles.instance()
 	particles.position = position
 	get_parent().add_child(particles)
+	$sfx_pop.play()
 	queue_free()
 
 func _ready():

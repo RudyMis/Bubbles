@@ -68,19 +68,10 @@ width = 96
 [node name="BubbleSpawner" parent="." instance=ExtResource( 8 )]
 position = Vector2( 152, 320 )
 
-path_anim = NodePath("")
-
 [node name="flow" parent="." instance=ExtResource( 10 )]
-position = Vector2( 239.661, 166.076 )
-rotation = -6.47523
-gravity_vec = Vector2( 0.963146, -0.268978 )
-gravity = 400.0
-path_end = NodePath("../Position2D")
-
-[node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 319.854, 150.483 )
-
-
+position = Vector2( 254.797, 183.525 )
+rotation = -1.90415
+path_end = null
 [connection signal="button_down" from="CreateBubbles" to="CreateBubbles" method="_create_bubble_scanner"]
 [connection signal="button_up" from="CreateBubbles" to="CreateBubbles" method="_on_button_released"]
 [connection signal="no_bubbles" from="BubbleSpawner" to="." method="_on_no_bubbles"]
