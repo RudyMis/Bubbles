@@ -44,6 +44,10 @@ tracks/0/keys = {
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 ps_bubble_scanner = ExtResource( 3 )
+path_label = NodePath("GuiIGuess/VBoxContainer/LiczbaBaniek")
+path_spawn = NodePath("SpawnPoint")
+path_timer = NodePath("Timer")
+path_anim = NodePath("AnimationPlayer")
 
 [node name="GuiIGuess" type="CenterContainer" parent="."]
 anchor_right = 1.0

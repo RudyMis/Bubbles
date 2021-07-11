@@ -46,14 +46,17 @@ ps_bubble = ExtResource( 3 )
 
 [node name="Bubble" parent="." instance=ExtResource( 6 )]
 position = Vector2( 160.509, 180.638 )
+ps_particles = null
 
 [node name="Bubble2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 111.244, 229.374 )
+ps_particles = null
 
 [node name="Gui" parent="." instance=ExtResource( 7 )]
 path_create_button = NodePath("../CreateBubbles")
 
 [node name="BubbleSpawner" parent="." instance=ExtResource( 8 )]
+visible = false
 position = Vector2( 152.695, 320.334 )
 
 [connection signal="button_down" from="CreateBubbles" to="CreateBubbles" method="_create_bubble_scanner"]

@@ -24,9 +24,6 @@ func remove_bubble():
 		emit_signal("no_bubbles")
 
 func _ready():
-	spawn = get_node(spawn)
-	label = get_node(label)
-	timer = get_node(timer)
 	label.text = String(number_of_bubbles)
 
 func _spawn_bubble():
