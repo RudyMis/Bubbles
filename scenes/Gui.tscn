@@ -55,12 +55,12 @@ custom_styles/normal = SubResource( 6 )
 flat = true
 
 [node name="Restart" type="TextureButton" parent="."]
-margin_left = 572.0
+margin_left = 20.0
 margin_top = 20.0
-margin_right = 620.0
+margin_right = 68.0
 margin_bottom = 52.0
 grow_horizontal = 0
-size_flags_horizontal = 8
+size_flags_horizontal = 0
 size_flags_vertical = 0
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 4 )
