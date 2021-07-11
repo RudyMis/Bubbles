@@ -1,15 +1,12 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/levels/base/scripts/level.gd" type="Script" id=1]
 [ext_resource path="res://scenes/levels/base/scripts/create_bubbles.gd" type="Script" id=2]
 [ext_resource path="res://scenes/bubbles/Bubble.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/bubbles/BubbleScanner.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/tilesets/ziemia/ziemia.tres" type="TileSet" id=5]
-[ext_resource path="res://assets/gui/Restart/ButtonRestart1.png" type="Texture" id=6]
 [ext_resource path="res://scenes/Gui.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/levels/base/BubbleSpawner.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/gui/Restart/ButtonRestart3.png" type="Texture" id=9]
-[ext_resource path="res://assets/gui/Restart/ButtonRestart2.png" type="Texture" id=10]
 [ext_resource path="res://scenes/levels/base/BubbleEater.tscn" type="PackedScene" id=11]
 
 [sub_resource type="StyleBoxEmpty" id=1]
@@ -58,24 +55,7 @@ rotation = -0.114044
 [node name="Gui" parent="." instance=ExtResource( 7 )]
 path_create_button = NodePath("../CreateBubbles")
 
-[node name="Restart" type="TextureButton" parent="."]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -59.0
-margin_top = 8.0
-margin_right = -11.0
-margin_bottom = 40.0
-grow_horizontal = 0
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 9 )
-texture_hover = ExtResource( 10 )
-stretch_mode = 5
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [connection signal="button_down" from="CreateBubbles" to="CreateBubbles" method="_create_bubble_scanner"]
 [connection signal="button_up" from="CreateBubbles" to="CreateBubbles" method="_on_button_released"]
 [connection signal="no_bubbles" from="BubbleSpawner" to="." method="_on_no_bubbles"]
 [connection signal="enough_bubbles" from="Succ" to="." method="_on_enough_bubbles"]
-[connection signal="pressed" from="Restart" to="." method="_on_restart"]

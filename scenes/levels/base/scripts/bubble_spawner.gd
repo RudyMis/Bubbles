@@ -1,6 +1,7 @@
 extends AnimatedSprite
 
 signal no_bubbles
+signal bubbles
 
 export (PackedScene) var ps_bubble_scanner
 export (int) var initial_number_of_bubbles := 10
@@ -22,6 +23,12 @@ func remove_bubble():
 	label.text = String(number_of_bubbles)
 	if number_of_bubbles <= 0:
 		emit_signal("no_bubbles")
+
+func add_bubble():
+	number_of_bubbles += 1
+	label.text = String(number_of_bubbles)
+	if number_of_bubbles == 1:
+		emit_signal("bubbles")
 
 func _ready():
 	label.text = String(number_of_bubbles)
@@ -45,3 +52,6 @@ func _on_button_toggled(button_toggle : bool):
 
 func _on_no_bubbles():
 	button.disabled = true
+
+func _on_bubbles():
+	button.disabled = false
