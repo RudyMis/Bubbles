@@ -1,4 +1,4 @@
-extends Sprite
+extends AnimatedSprite
 
 signal no_bubbles
 
@@ -34,8 +34,13 @@ func _spawn_bubble():
 	bubble_scanner.start_growing(timer.wait_time / 2.0, bubble_scale)
 	yield(get_tree(), "idle_frame")
 	bubble_scanner.set_visible(true)
-	
+	play("plumm")
 	remove_bubble()
 
 func _on_button_toggled(button_toggle : bool):
 	timer.start() if button_toggle else timer.stop()
+	if button_toggle:
+		play("plumm")
+	else:
+		stop()
+		frame = 0

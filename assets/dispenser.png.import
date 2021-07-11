@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dispenser.png-082d4173f403ce385c9a9453bfd6591f.stex"
+path="res://.import/dispenser.png-13c08cecc0cb5c6bbef98adc8a1075c6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/dispenser.png"
-dest_files=[ "res://.import/dispenser.png-082d4173f403ce385c9a9453bfd6591f.stex" ]
+source_file="res://assets/dispenser.png"
+dest_files=[ "res://.import/dispenser.png-13c08cecc0cb5c6bbef98adc8a1075c6.stex" ]
 
 [params]
 
