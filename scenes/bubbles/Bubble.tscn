@@ -25,5 +25,4 @@ shape = SubResource( 2 )
 [node name="Sprite" type="Sprite" parent="."]
 material = ExtResource( 2 )
 texture = ExtResource( 3 )
-
 [connection signal="input_event" from="." to="." method="_on_input_event"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/levels/create_bubbles.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Gui.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/bubbles/Bubble.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/bubbles/StaticBubble.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/levels/level.gd" type="Script" id=6]
+[ext_resource path="res://scenes/Trampoline_indicator.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/tilesets/ziemia.tres" type="TileSet" id=8]
 
 [sub_resource type="StyleBoxEmpty" id=1]
@@ -52,5 +53,13 @@ position = Vector2( 111.244, 229.374 )
 [node name="Gui" parent="." instance=ExtResource( 2 )]
 create_button = NodePath("../CreateBubbles")
 
+[node name="tramp_ind" parent="." instance=ExtResource( 7 )]
+visible = false
+anchor_left = 1.0
+anchor_bottom = 0.0
+margin_left = -51.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = 52.0
 [connection signal="button_down" from="CreateBubbles" to="CreateBubbles" method="_create_bubble_scanner"]
 [connection signal="button_up" from="CreateBubbles" to="CreateBubbles" method="_release_bubble"]
