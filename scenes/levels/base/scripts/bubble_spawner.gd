@@ -52,6 +52,7 @@ func _on_button_toggled(button_toggle : bool):
 
 func _on_no_bubbles():
 	button.disabled = true
+	timer.stop()
 
 func _on_bubbles():
 	button.disabled = false
