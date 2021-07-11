@@ -5,9 +5,15 @@ signal no_bubbles
 export (PackedScene) var ps_bubble_scanner
 export (int) var initial_number_of_bubbles := 10
 export (Vector2) var bubble_scale := Vector2(1, 1)
-export (NodePath) var label
-export (NodePath) var spawn
-export (NodePath) var timer
+export (NodePath) var path_label
+export (NodePath) var path_spawn
+export (NodePath) var path_timer
+export (Node) var path_anim
+
+onready var label = get_node(path_label)
+onready var spawn = get_node(path_spawn)
+onready var timer = get_node(path_timer)
+onready var anim = get_node(path_anim)
 
 onready var number_of_bubbles : int = initial_number_of_bubbles
 

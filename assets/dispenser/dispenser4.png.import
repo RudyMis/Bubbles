@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Ziemia.png-9b8f390b1f2c18184c535ac599c3abc3.stex"
+path="res://.import/dispenser4.png-caec63a481e3aa2cdc1891c96ba51462.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Ziemia.png"
-dest_files=[ "res://.import/Ziemia.png-9b8f390b1f2c18184c535ac599c3abc3.stex" ]
+source_file="res://assets/dispenser/dispenser4.png"
+dest_files=[ "res://.import/dispenser4.png-caec63a481e3aa2cdc1891c96ba51462.stex" ]
 
 [params]
 

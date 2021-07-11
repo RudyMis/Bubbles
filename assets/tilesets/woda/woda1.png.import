@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/woda2.png-a9fdd2c34e866a60407cc361ff72fc2e.stex"
+path="res://.import/woda1.png-dbbe393fb3de0ac3002c88507f617d09.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/woda2.png"
-dest_files=[ "res://.import/woda2.png-a9fdd2c34e866a60407cc361ff72fc2e.stex" ]
+source_file="res://assets/tilesets/woda/woda1.png"
+dest_files=[ "res://.import/woda1.png-dbbe393fb3de0ac3002c88507f617d09.stex" ]
 
 [params]
 
