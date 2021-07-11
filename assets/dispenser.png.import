@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/woda1.png-cabc281a40c778e5a8009f7e9c20a99c.stex"
+path="res://.import/dispenser.png-13c08cecc0cb5c6bbef98adc8a1075c6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/woda1.png"
-dest_files=[ "res://.import/woda1.png-cabc281a40c778e5a8009f7e9c20a99c.stex" ]
+source_file="res://assets/dispenser.png"
+dest_files=[ "res://.import/dispenser.png-13c08cecc0cb5c6bbef98adc8a1075c6.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
