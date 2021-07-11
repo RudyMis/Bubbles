@@ -1,0 +1,61 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://scenes/levels/base/level.gd" type="Script" id=1]
+[ext_resource path="res://scenes/levels/base/create_bubbles.gd" type="Script" id=2]
+[ext_resource path="res://scenes/bubbles/Bubble.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/bubbles/BubbleScanner.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/tilesets/ziemia.tres" type="TileSet" id=5]
+[ext_resource path="res://scenes/bubbles/StaticBubble.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Gui.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/levels/base/BubbleSpawner.tscn" type="PackedScene" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[node name="Level" type="CanvasLayer"]
+script = ExtResource( 1 )
+path_create_bubbles = NodePath("CreateBubbles")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="CreateBubbles" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+flat = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+ps_bubble_scanner = ExtResource( 4 )
+ps_bubble = ExtResource( 3 )
+
+[node name="Bubble" parent="." instance=ExtResource( 6 )]
+position = Vector2( 160.509, 180.638 )
+
+[node name="Bubble2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 111.244, 229.374 )
+
+[node name="Gui" parent="." instance=ExtResource( 7 )]
+path_create_button = NodePath("../CreateBubbles")
+
+[node name="BubbleSpawner" parent="." instance=ExtResource( 8 )]
+position = Vector2( 152.695, 320.334 )
+
+[connection signal="button_down" from="CreateBubbles" to="CreateBubbles" method="_create_bubble_scanner"]
+[connection signal="button_up" from="CreateBubbles" to="CreateBubbles" method="_on_button_released"]
+[connection signal="no_bubbles" from="BubbleSpawner" to="." method="_on_no_bubbles"]

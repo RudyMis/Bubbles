@@ -7,6 +7,7 @@ resource_local_to_scene = true
 radius = 15.6432
 
 [node name="Bubble" instance=ExtResource( 1 )]
+input_pickable = false
 mode = 1
 physics_material_override = null
 gravity_scale = 0.0
