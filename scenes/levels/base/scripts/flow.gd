@@ -3,7 +3,7 @@ extends Area2D
 
 export (float) var speed := 40 # Prędkość animacji oraz baniek, które wlatują.
 export (NodePath) var path_end = null
-onready var end : Node2D = get_node(path_end)
+onready var end : Node2D = get_node_or_null(path_end)
 
 func _ready():
 	if path_end == null: return

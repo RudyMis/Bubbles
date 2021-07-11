@@ -15,8 +15,13 @@ func kill():
 	var particles = ps_particles.instance()
 	particles.position = position
 	get_parent().add_child(particles)
+	
+	if !is_in_group("HappyBubble"):
+		get_tree().call_group("BubbleSpawner", "add_bubble")
+	
 	$sfx_pop.pitch_scale = 0.7 + randf()
 	$sfx_pop.play()
+	
 	$Sprite.visible = false
 	yield($sfx_pop, "finished")
 	queue_free()

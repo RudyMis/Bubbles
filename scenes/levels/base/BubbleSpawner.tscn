@@ -110,6 +110,8 @@ wait_time = 2.0
 
 [node name="pyk" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 10 )
+
+[connection signal="bubbles" from="." to="." method="_on_bubbles"]
 [connection signal="no_bubbles" from="." to="." method="_on_no_bubbles"]
 [connection signal="toggled" from="Guzik" to="." method="_on_button_toggled"]
 [connection signal="timeout" from="Timer" to="." method="_spawn_bubble"]

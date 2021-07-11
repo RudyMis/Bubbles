@@ -43,7 +43,6 @@ func _on_song_finished():
 	doubleplay = !doubleplay
 
 func _on_playpause_toggle(button_pressed):
-	print("0pp")
 	if button_pressed:
 		$Label.text = "||"
 	else:
