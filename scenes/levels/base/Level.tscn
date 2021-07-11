@@ -1,11 +1,10 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/levels/base/scripts/level.gd" type="Script" id=1]
 [ext_resource path="res://scenes/levels/base/scripts/create_bubbles.gd" type="Script" id=2]
 [ext_resource path="res://scenes/bubbles/Bubble.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/bubbles/BubbleScanner.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/tilesets/ziemia/ziemia.tres" type="TileSet" id=5]
-[ext_resource path="res://autoload/SceneChanger.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/Gui.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/levels/base/BubbleSpawner.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/levels/base/BubbleEater.tscn" type="PackedScene" id=11]
@@ -56,8 +55,7 @@ position = Vector2( 152, 320 )
 position = Vector2( 311.606, 79.2579 )
 rotation = -0.114044
 
-[node name="ColorRect" parent="." instance=ExtResource( 6 )]
-
 [connection signal="button_down" from="CreateBubbles" to="CreateBubbles" method="_create_bubble_scanner"]
 [connection signal="button_up" from="CreateBubbles" to="CreateBubbles" method="_on_button_released"]
 [connection signal="no_bubbles" from="BubbleSpawner" to="." method="_on_no_bubbles"]
+[connection signal="enough_bubbles" from="Succ" to="." method="_on_enough_bubbles"]

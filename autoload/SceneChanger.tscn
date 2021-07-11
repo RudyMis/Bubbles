@@ -6,11 +6,12 @@
 code = "shader_type canvas_item;
 
 uniform float radius : hint_range(0, 1);
+uniform vec4 color : hint_color;
 
 void fragment() {
 	vec2 uv = (UV - vec2(0.5)) * vec2(16.0, 9.0) / 10.0;
 	if (length(uv) > radius) {
-		COLOR = texture(TEXTURE, UV);
+		COLOR = color;
 	}
 	else {
 		COLOR = vec4(0.0);
@@ -20,12 +21,17 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id=2]
 shader = SubResource( 1 )
 shader_param/radius = 1.0
+shader_param/color = Color( 1, 0, 0.447059, 1 )
 
-[node name="ColorRect" type="ColorRect"]
+[node name="SceneChanger" type="ColorRect"]
 material = SubResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 1, 0, 0.447059, 1 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Tween" type="Tween" parent="."]

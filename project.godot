@@ -24,6 +24,10 @@ config/name="Bubbles"
 run/main_scene="res://scenes/levels/base/Level.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+SceneChanger="*res://autoload/SceneChanger.tscn"
+
 [display]
 
 window/size/width=640

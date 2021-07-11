@@ -47,8 +47,8 @@ position = Vector2( 518.314, 224.359 )
 
 [node name="Flow" parent="Decor" index="2" instance=ExtResource( 4 )]
 position = Vector2( 508.249, 146.489 )
-rotation = 1.52542
-gravity_vec = Vector2( -0.0453655, -0.99897 )
+rotation = 1.52541
+gravity_vec = Vector2( -0.0453698, -0.99897 )
 gravity = 400.0
 path_end = NodePath("../Position2D")
 

@@ -10,3 +10,6 @@ func _ready():
 func _on_no_bubbles():
 	if create_bubbles == null: return
 	create_bubbles.disable(true)
+
+func _on_enough_bubbles():
+	SceneChanger.end_level()
