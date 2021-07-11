@@ -1,0 +1,29 @@
+extends Control
+
+func _ready():
+	$A1/AnimationPlayer.play("funnyletters")
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+
+
+func _STARTDAGAME():
+	get_tree().change_scene("res://scenes/levels/Level1.tscn")
+
+func _on_cr_button_pressed():
+	$A1.visible = false
+
+func _on_A1pl_button_pressed():
+	_STARTDAGAME()
+func _on_ACRpl_button_pressed():
+	_STARTDAGAME()
+func _on_ATUpl_button_pressed():
+	_STARTDAGAME()
+
+func _on_ACRtu_button_pressed():
+	$A1.visible = false
+	$ACR.visible = false
+func _on_A1tu_button_pressed():
+	$A1.visible = false
+	$ACR.visible = false
