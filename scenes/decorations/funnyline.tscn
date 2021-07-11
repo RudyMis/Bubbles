@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Nodes/funnyline.gd" type="Script" id=1]
+[ext_resource path="res://scenes/decorations/funnyline.gd" type="Script" id=1]
 
 [node name="funnyline" type="Line2D"]
 points = PoolVector2Array( 184, -202, 0, 0 )

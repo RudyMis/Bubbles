@@ -83,9 +83,10 @@ animation = "plumm"
 speed_scale = 0.5
 script = ExtResource( 2 )
 ps_bubble_scanner = ExtResource( 3 )
-label = NodePath("GuiIGuess/VBoxContainer/LiczbaBaniek")
-spawn = NodePath("SpawnPoint")
-timer = NodePath("Timer")
+path_label = NodePath("GuiIGuess/VBoxContainer/LiczbaBaniek")
+path_spawn = NodePath("SpawnPoint")
+path_timer = NodePath("Timer")
+path_anim = NodePath("AnimationPlayer")
 
 [node name="tylko_wyglad" type="AnimatedSprite" parent="."]
 position = Vector2( 0, 6 )
@@ -113,6 +114,7 @@ margin_left = 7.0
 margin_right = 17.0
 margin_bottom = 28.0
 
+
 [node name="Guzik" type="TextureButton" parent="GuiIGuess/VBoxContainer"]
 margin_right = 10.0
 margin_bottom = 10.0
@@ -139,7 +141,9 @@ position = Vector2( 0, -16 )
 wait_time = 2.0
 
 [node name="Tween" type="Tween" parent="."]
+
 [connection signal="button_down" from="GuiIGuess/VBoxContainer/Guzik" to="." method="_on_Guzik_button_down"]
 [connection signal="button_up" from="GuiIGuess/VBoxContainer/Guzik" to="." method="_on_Guzik_button_up"]
+
 [connection signal="toggled" from="GuiIGuess/VBoxContainer/Guzik" to="." method="_on_button_toggled"]
 [connection signal="timeout" from="Timer" to="." method="_spawn_bubble"]
