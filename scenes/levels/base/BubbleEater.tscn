@@ -28,7 +28,7 @@ path_label = NodePath("screen/Label")
 [node name="Flow" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 40 )
 rotation = -1.5708
-gravity_vec = Vector2( 1.94707e-07, 1 )
+gravity_vec = Vector2( -4.37114e-08, 1 )
 gravity = 400.0
 speed = 40.0
 path_end = NodePath("../End")
