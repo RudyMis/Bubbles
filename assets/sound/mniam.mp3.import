@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mniam.mp3-d5b76d82fe286efb463a819bb3558e76.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/mniam.mp3"
+dest_files=[ "res://.import/mniam.mp3-d5b76d82fe286efb463a819bb3558e76.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

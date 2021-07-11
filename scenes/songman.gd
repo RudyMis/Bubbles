@@ -30,20 +30,16 @@ func _on_song_finished():
 	$Label.text = String(current + 1)
 	doubleplay = !doubleplay
 
-
-func _on_playpause_input_event(viewport, event, shape_idx):
+func _on_playpause_toggle(button_pressed):
 	print("0pp")
-	if event is InputEventMouseButton and event.pressed:
-		if playing:
-			$Label.text = "||"
-			$song.pause()
-		else:
-			$Label.text = String(current + 1)
-			$song.play()
-		playing = !playing
+	if button_pressed:
+		$Label.text = "||"
+		$song.pause()
+	else:
+		$Label.text = String(current + 1)
+		$song.play()
+	playing = !button_pressed
 
 
-func _on_next_input_event(viewport, event, shape_idx):
-	print("521")
-	if event is InputEventMouseButton and event.pressed:
-		_on_song_finished()
+func _on_next_pressed():
+	_on_song_finished()
