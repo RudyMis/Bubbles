@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://scenes/flow.gd" type="Script" id=1]
+[ext_resource path="res://scenes/levels/base/scripts/flow.gd" type="Script" id=1]
 
 [sub_resource type="ParticlesMaterial" id=1]
 trail_divisor = 5
@@ -9,7 +9,7 @@ emission_box_extents = Vector3( 1, 14, 1 )
 flag_disable_z = true
 spread = 0.0
 gravity = Vector3( 0, 0, 0 )
-initial_velocity = 20.0
+initial_velocity = 1.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 color = Color( 1, 1, 1, 0.780392 )
@@ -19,7 +19,7 @@ hue_variation = -1.0
 resource_local_to_scene = true
 extents = Vector2( 40, 14 )
 
-[node name="flow" type="Area2D"]
+[node name="Flow" type="Area2D"]
 space_override = 4
 gravity_vec = Vector2( 0, 20 )
 script = ExtResource( 1 )
