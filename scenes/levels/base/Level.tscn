@@ -70,8 +70,8 @@ position = Vector2( 152, 320 )
 
 [node name="flow" parent="." instance=ExtResource( 10 )]
 position = Vector2( 254.797, 183.525 )
-rotation = -1.90415
-path_end = null
+rotation = -4.0738
+path_end = NodePath("../Bubble")
 [connection signal="button_down" from="CreateBubbles" to="CreateBubbles" method="_create_bubble_scanner"]
 [connection signal="button_up" from="CreateBubbles" to="CreateBubbles" method="_on_button_released"]
 [connection signal="no_bubbles" from="BubbleSpawner" to="." method="_on_no_bubbles"]

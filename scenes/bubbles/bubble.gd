@@ -8,6 +8,7 @@ export (PackedScene) var ps_particles
 
 func rescale(s : Vector2):
 	$sfx_inflate.play()
+	print("push")
 	for child in get_children():
 		if "scale" in child:
 			child.scale = s
@@ -16,6 +17,7 @@ func kill():
 	var particles = ps_particles.instance()
 	particles.position = position
 	get_parent().add_child(particles)
+	print("pop")
 	$sfx_pop.play()
 	queue_free()
 
