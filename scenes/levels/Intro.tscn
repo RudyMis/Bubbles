@@ -535,9 +535,27 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="A1"]
 anims/funnyletters = SubResource( 1 )
 
+[node name="Exit" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -64.4351
+margin_top = -31.3137
+margin_right = -13.4351
+margin_bottom = -11.3137
+grow_horizontal = 0
+custom_fonts/font = ExtResource( 1 )
+text = "[ Exit ]"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="ATU/pl_button2" to="." method="_on_ATUpl_button_pressed"]
 [connection signal="pressed" from="ACR/tu_button" to="." method="_on_ACRtu_button_pressed"]
 [connection signal="pressed" from="ACR/pl_button" to="." method="_on_ACRpl_button_pressed"]
 [connection signal="pressed" from="A1/cr_button" to="." method="_on_cr_button_pressed"]
 [connection signal="pressed" from="A1/tu_button" to="." method="_on_A1tu_button_pressed"]
 [connection signal="pressed" from="A1/pl_button" to="." method="_on_A1pl_button_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit"]

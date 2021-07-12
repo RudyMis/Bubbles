@@ -22,3 +22,7 @@ func _on_ACRtu_button_pressed():
 func _on_A1tu_button_pressed():
 	$A1.visible = false
 	$ACR.visible = false
+
+
+func _on_exit():
+	get_tree().quit()
