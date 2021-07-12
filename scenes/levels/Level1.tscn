@@ -24,12 +24,12 @@ margin_bottom = -0.667419
 [node name="InfoStart" type="Label" parent="." index="5"]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 18.0793
-margin_top = -56.0448
-margin_right = 250.079
-margin_bottom = -37.0448
+margin_left = 9.25984
+margin_top = -85.023
+margin_right = 241.26
+margin_bottom = -66.023
 custom_fonts/font = ExtResource( 2 )
-text = "Press to create
+text = "Pull lever to make
 happy bubbles"
 __meta__ = {
 "_edit_use_anchors_": false

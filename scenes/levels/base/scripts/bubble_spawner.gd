@@ -47,8 +47,15 @@ func _spawn_bubble():
 	if number_of_bubbles > 0 : play("plumm")
 	remove_bubble()
 
+func toggle_button(value : bool):
+	button.pressed = value
+
 func _on_button_toggled(button_toggle : bool):
-	timer.start() if button_toggle else timer.stop()
+	if button_toggle:
+		_spawn_bubble()
+		timer.start()
+	else:
+		 timer.stop()
 
 func _on_no_bubbles():
 	button.disabled = true
