@@ -3,7 +3,7 @@ extends CanvasLayer
 export (float) var fade_time := 1.0
 export (String) var radius_param_name := "radius"
 export (String) var level_prefix := "res://scenes/levels/Level"
-export (String) var menu_path := ""
+export (String) var menu_path := "res://scenes/levels/Intro.tscn"
 
 var current_level_number := 1
 

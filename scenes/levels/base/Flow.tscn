@@ -23,7 +23,6 @@ extents = Vector2( 40, 14 )
 space_override = 4
 gravity_vec = Vector2( 0, 20 )
 script = ExtResource( 1 )
-path_end = null
 
 [node name="particles" type="Particles2D" parent="."]
 amount = 120
