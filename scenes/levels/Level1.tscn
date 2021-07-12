@@ -10,6 +10,7 @@ tile_data = PoolIntArray( -65538, 0, 0, -65537, 0, 2, -131072, 0, 1, -131071, 0,
 
 [node name="BubbleSpawner" parent="." index="2"]
 position = Vector2( 153.259, 313.948 )
+initial_number_of_bubbles = 15
 
 [node name="Succ" parent="." index="3"]
 position = Vector2( 550.266, 71.9469 )

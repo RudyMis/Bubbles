@@ -38,6 +38,7 @@ position = Vector2( 198.425, 257.159 )
 
 [node name="Flow2" parent="." index="7" instance=ExtResource( 2 )]
 position = Vector2( 585.076, 146.746 )
+speed = 20.0
 path_end = NodePath("../Position2D2")
 
 [node name="Position2D2" type="Position2D" parent="." index="8"]

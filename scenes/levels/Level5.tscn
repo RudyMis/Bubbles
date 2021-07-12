@@ -21,7 +21,7 @@ required_amount_of_bubbles = 5
 position = Vector2( 94.4895, 204.797 )
 
 [node name="Bubble2" parent="." index="5" instance=ExtResource( 3 )]
-position = Vector2( 612.092, 41.4554 )
+position = Vector2( 367.667, 45.5501 )
 
 [node name="Flow" parent="." index="6" instance=ExtResource( 2 )]
 position = Vector2( 12.4213, 65.4385 )
@@ -29,4 +29,4 @@ speed = 25.0
 path_end = NodePath("../Position2D")
 
 [node name="Position2D" type="Position2D" parent="." index="7"]
-position = Vector2( 462.007, 70.1632 )
+position = Vector2( 524.936, 74.6581 )
